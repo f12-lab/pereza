@@ -1,6 +1,6 @@
 = Pereza
 :author: Manuel L. Quero
-:revdate: 2025-03-31
+:revdate: 2025-04-13
 :toc: left
 :doctype: book
 
