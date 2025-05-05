@@ -1,6 +1,5 @@
 = Pereza
 :author: Manuel L. Quero
-:revdate: 2025-04-13
 :toc: left
 :doctype: book
 
@@ -382,8 +381,10 @@ Trying root / roost Time: 00:03:02 <============================================
 
 Como podemos ver que el ataque lo realiza sobre Xmlrpc y que ha encontrado la contraseña root, por lo que probamos a ponerla:
 
+[.text-center]
 image::assets/root.png[Metemos Credenciales]
 
+[.text-center]
 image::assets/acceso.png[Acceso a WordPress]
 
 Y como podemos ver, estamos dentro.
