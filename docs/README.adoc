@@ -3,7 +3,24 @@
 :toc: left
 :doctype: book
 
-<<<
+== Despliegue de la máquina
+
+Sería conveniente utilizar una distribución Linux, es recomendable usar Kali Linux.
+
+Como requisito, necesitaremos tener instalado docker y docker-compose.
+
+Podemos ver como instalar docker para varias distribuciones de linux -> https://docs.docker.com/engine/install/[Instalar Docker]
+
+Podemos ver como instalar docker-compose para varias distribuciones de linux -> https://docs.docker.com/compose/install/linux/[Instalar Docker-Compose]
+
+Necesitaremos descargar primeramente el auto_deploy.sh, el cual se muestra como una pirámide en la página. Después en un directorio deberemos tener el auto_deploy.sh, pereza.tar y docker-compose.yml, deberemos acceder con la terminal a dicho directorio y ejecutar el siguiente comando. 
+
+(Si el auto_deploy no tiene permisos se los damos mediante *chmod +x*). 
+
+[source,bash]
+----
+$ sudo bash auto_deploy.sh pereza.tar
+----
 
 == WordPress y sus vulnerabilidades
 
@@ -35,30 +52,9 @@ Entre los ataques más comunes se encuentran:
 
 * Escalada de privilegios a través de bugs en extensiones
 
-<<<
-
 == Solucionar la máquina
 
 En esta guía aprenderemos cómo analizar un sitio web desarrollado con WordPress para identificar posibles vulnerabilidades. Utilizaremos herramientas como WPScan para detectar configuraciones inseguras, plugins o temas desactualizados y otros puntos débiles comunes. Después se realizará un ataque de fuerza bruta como parte del reconocimiento activo, pero su explicación detallada se abordará en la sección correspondiente al círculo de la ira.
-
-Sería conveniente utilizar una distribución Linux, es recomendable usar Kali Linux.
-
-=== Despliegue de la máquina
-
-Como requisito, necesitaremos tener instalado docker y docker-compose.
-
-Podemos ver como instalar docker para varias distribuciones de linux -> https://docs.docker.com/engine/install/[Instalar Docker]
-
-Podemos ver como instalar docker-compose para varias distribuciones de linux -> https://docs.docker.com/compose/install/linux/[Instalar Docker-Compose]
-
-Necesitaremos descargar primeramente el auto_deploy.sh, el cual se muestra como una pirámide en la página. Después en un directorio deberemos tener el auto_deploy.sh, pereza.tar y docker-compose.yml, deberemos acceder con la terminal a dicho directorio y ejecutar el siguiente comando. 
-
-(Si el auto_deploy no tiene permisos se los damos mediante *chmod +x*). 
-
-[source,bash]
-----
-$ sudo bash auto_deploy.sh pereza.tar
-----
 
 === WPscan
 
@@ -381,15 +377,11 @@ Trying root / roost Time: 00:03:02 <============================================
 
 Como podemos ver que el ataque lo realiza sobre Xmlrpc y que ha encontrado la contraseña root, por lo que probamos a ponerla:
 
-[.text-center]
-image::assets/root.png[Metemos Credenciales]
+image::assets/root.png[Metemos Credenciales,align=center]
 
-[.text-center]
-image::assets/acceso.png[Acceso a WordPress]
+image::assets/acceso.png[Acceso a WordPress,align=center]
 
 Y como podemos ver, estamos dentro.
-
-<<<
 
 == ¿Cómo prevenir?
 
