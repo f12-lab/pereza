@@ -13,11 +13,13 @@ Podemos ver como instalar docker para varias distribuciones de linux -> https://
 
 Podemos ver como instalar docker-compose para varias distribuciones de linux -> https://docs.docker.com/compose/install/linux/[Instalar Docker-Compose]
 
-En este caso deberemos descromprimir el 7z creásndose un directorio y acceder con la terminal a este y ejecutar el siguiente comando. 
+Necesitaremos descargar primeramente el auto_deploy.sh, el cual se muestra como una pirámide en la página. Después en un directorio deberemos tener el auto_deploy.sh, pereza.tar y docker-compose.yml, deberemos acceder con la terminal a dicho directorio y ejecutar el siguiente comando. 
+
+(Si el auto_deploy no tiene permisos se los damos mediante *chmod +x*). 
 
 [source,bash]
 ----
-$ sudo docker-compose up -d --build
+$ sudo bash auto_deploy.sh pereza.tar
 ----
 
 == WordPress y sus vulnerabilidades
@@ -54,6 +56,50 @@ Entre los ataques más comunes se encuentran:
 
 En esta guía aprenderemos cómo analizar un sitio web desarrollado con WordPress para identificar posibles vulnerabilidades. Utilizaremos herramientas como WPScan para detectar configuraciones inseguras, plugins o temas desactualizados y otros puntos débiles comunes. Después se realizará un ataque de fuerza bruta como parte del reconocimiento activo, pero su explicación detallada se abordará en la sección correspondiente al círculo de la ira.
 
+=== Crear nuestro Wordpress
+
+En esta máquina aprenderemos a crear un entorno vulnerable de Wordpress, no nos llevará mucho tiempo, ya que las configuraciones las dejaremos por defecto.
+
+Empezamos eligiendo el idioma:
+
+image::assets/idioma.png[Elegir idioma,align=center]
+
+Después configuramos las credenciales, en este caso al ser un administrador perezoso, pongo unas credenciales sencillas porque ya las cambiaré.
+
+image::assets/credenciales.png[Configurar credenciales,align=center]
+
+Por lo que instalamos wordpress y accedemos con nuestras credenciales.
+
+image::assets/accesoUno.png[Acceder por primera vez,align=center]
+
+De esta forma ya estaría listo nuestro entorno, en caso opcional, podemos darle un estilo a nuestra página o probar a instalar plugins con vulnerabilidades o incluso securizarlo, las posibilidades son infinitas.
+
+==== Usar entorno Acedia
+
+También podeis usar el entorno que he creado importando el .xml dentro de vuestro wordpress:
+
+image::assets/importar1.png[Página de importar,align=center]
+
+Le damos a instalar y después ejecutamos el importador. En este seleccionamos el archivo acediastore.xml que se encuentra en wp-import.
+
+image::assets/importar2.png[Importador,align=center]
+
+image::assets/importar3.png[Importar xml,align=center]
+
+Una vez hecho esto, le damos a enviar.
+
+image::assets/importar4.png[Enviar,align=center]
+
+Ya tendríamos el entorno, pero faltan las imágenes.
+
+image::assets/importar5.png[Importación concluida,align=center]
+
+Para importar las imágenes, tenemos que ir a medios y volcar la carpeta acedia-imagenes que se encuentra en wp-import dentro del espacio vacío.
+
+image::assets/imagenes.png[Importar imágenes,align=center]
+
+Y ya tendríamos la página sobre la que se basa esta guía.
+
 === WPscan
 
 WPscan es una herramienta de escaneo de seguridad específica para sitios web construidos con WordPress. 
@@ -87,6 +133,8 @@ WPscan es gratis pero mejora con la API, en caso que queramos hacer escaneos má
 ==== Reconocimiento
 
 Una vez instalada nuestra herramienta, vamos a proceder a analizar la página.
+
+image::assets/Pagina.png[Página web,align=center]
 
 Es importante saber que el login de WordPress está en /wp-admin. También esta /robots.txt que nos puede proporcionar información adicional.
 
