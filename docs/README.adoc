@@ -96,7 +96,11 @@ image::assets/importar5.png[Importación concluida,align=center]
 
 Para importar las imágenes, tenemos que ir a medios y volcar la carpeta acedia-imagenes que se encuentra en wp-import dentro del espacio vacío.
 
-image::assets/imagenes.png[Importar imágenes,align=center]
+image::assets/imagenes1.png[Importar imágenes,align=center]
+
+Pero pasarlo no es suficiente, ya que la ruta de estas imagenes es la del mes actual, y la importación se hizo en abril por lo que tenemos que meternos dentro de la máquina modificar la carpeta /wp-content/uploads/2025/(mes actual) a 04/, como se muestra a continuación:
+
+image::assets/imagenes2.png[Cambiar ruta,align=center]
 
 Y ya tendríamos la página sobre la que se basa esta guía.
 
