@@ -68,9 +68,11 @@ Después configuramos las credenciales, en este caso al ser un administrador per
 
 image::assets/credenciales.png[Configurar credenciales,align=center]
 
+<<<
+
 Por lo que instalamos wordpress y accedemos con nuestras credenciales.
 
-image::assets/accesoUno.png[Acceder por primera vez,align=center]
+image::assets/accesoUno.png[Acceder por primera vez,width=440,align=center]
 
 De esta forma ya estaría listo nuestro entorno, en caso opcional, podemos darle un estilo a nuestra página o probar a instalar plugins con vulnerabilidades o incluso securizarlo, las posibilidades son infinitas.
 
@@ -78,21 +80,23 @@ De esta forma ya estaría listo nuestro entorno, en caso opcional, podemos darle
 
 También podeis usar el entorno que he creado importando el .xml dentro de vuestro wordpress:
 
-image::assets/importar1.png[Página de importar,align=center]
+image::assets/importar1.png[Página de importar,width=540,align=center]
+
+<<<
 
 Le damos a instalar y después ejecutamos el importador. En este seleccionamos el archivo acediastore.xml que se encuentra en wp-import.
 
-image::assets/importar2.png[Importador,align=center]
+image::assets/importar2.png[Importador,width=540,align=center]
 
-image::assets/importar3.png[Importar xml,align=center]
+image::assets/importar3.png[Importar xml,width=560,align=center]
 
 Una vez hecho esto, le damos a enviar.
 
-image::assets/importar4.png[Enviar,align=center]
+image::assets/importar4.png[Enviar,width=560,align=center]
 
 Ya tendríamos el entorno, pero faltan las imágenes.
 
-image::assets/importar5.png[Importación concluida,align=center]
+image::assets/importar5.png[Importación concluida,width=500,align=center]
 
 Para importar las imágenes, tenemos que ir a medios y volcar la carpeta acedia-imagenes que se encuentra en wp-import dentro del espacio vacío.
 
@@ -404,6 +408,8 @@ Estos ataques requieren mucho tiempo, especialmente cuando se utilizan contrase�
 
 Existen varios tipos, pero nosotros vamos a usar el ataque por diccionario, en este el atacante selecciona un objetivo y luego prueba las posibles contraseñas contra el nombre de usuario de esa persona.
 
+<<<
+
 Kali Linux viene con varios diccionarios preinstalados en la ruta /usr/share/wordlists, que forman parte de sus herramientas, podemos verlo más en detalle en el siguiente enlace https://www.kali.org/tools/wordlists/[Wordlists]. Recomiendo primeramente probar diccionarios pequeños, sobretodo si encontramos indicios de credenciales por defecto, ya que tardará menos que si utilizamos diccionarios más grandes como https://github.com/intelligencegroup-io/RockYou2024[rockyou 2024] con 9,948,575,739 contraseñas.
 
 [source,bash]
@@ -427,9 +433,9 @@ Trying root / roost Time: 00:03:02 <============================================
 
 Como podemos ver que el ataque lo realiza sobre Xmlrpc y que ha encontrado la contraseña root, por lo que probamos a ponerla:
 
-image::assets/root.png[Metemos Credenciales,align=center]
+image::assets/root.png[Metemos Credenciales,width=460,align=center]
 
-image::assets/acceso.png[Acceso a WordPress,align=center]
+image::assets/acceso.png[Acceso a WordPress,width=460,align=center]
 
 Y como podemos ver, estamos dentro.
 
