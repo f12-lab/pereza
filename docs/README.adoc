@@ -98,11 +98,11 @@ Ya tendríamos el entorno, pero faltan las imágenes.
 
 image::assets/importar5.png[Importación concluida,width=500,align=center]
 
-Para importar las imágenes, tenemos que ir a medios y volcar la carpeta acedia-imagenes que se encuentra en wp-import dentro del espacio vacío.
+Para importar las imágenes, tenemos que ir a medios y volcar la carpeta acedia-imágenes que se encuentra en wp-import dentro del espacio vacío.
 
 image::assets/imagenes1.png[Importar imágenes,align=center]
 
-Pero pasarlo no es suficiente, ya que la ruta de estas imagenes es la del mes actual, y la importación se hizo en abril por lo que tenemos que meternos dentro de la máquina modificar la carpeta /wp-content/uploads/2025/(mes actual) a 04/, como se muestra a continuación:
+Pero pasarlo no es suficiente, ya que la ruta de estas imágenes es la del mes actual, y la importación se hizo en abril por lo que tenemos que meternos dentro de la máquina modificar la carpeta /wp-content/uploads/2025/(mes actual) a 04/, como se muestra a continuación:
 
 image::assets/imagenes2.png[Cambiar ruta,align=center]
 
@@ -136,7 +136,7 @@ $ docker run -it --rm wpscanteam/wpscan --url https://target.tld/ --enumerate (.
 
 En caso de usar distribuciones más extrañas puedes https://www.linuxbabe.com/security/install-wpscan-wp-vulnerability-scanner[ver esto].
 
-WPscan es gratis pero mejora con la API, en caso que queramos hacer escaneos más exhaustivos -> https://wpscan.com/pricing/[ver aquí].
+WPscan es gratis, pero mejora con la API, en caso que queramos hacer escaneos más exhaustivos -> https://wpscan.com/pricing/[ver aquí].
 
 ==== Reconocimiento
 
@@ -263,7 +263,7 @@ X-Powered-By: PHP/8.2.28
 
 * *[+] XML-RPC Enabled*
 
-XML-RPC es un protocolo que permite a aplicaciones externas interactuar con WordPress (ej: publicación remota). Tener esta habilitado es altamente peligroso y explotable. 
+XML-RPC es un protocolo que permite a aplicaciones externas interactuar con WordPress (ej: publicación remota). Tener está habilitado es altamente peligroso y explotable. 
 Puede usarse para: ataques de fuerza bruta por amplificación, pingback DDoS o escaneo de usuarios.
 
 ----
@@ -404,13 +404,13 @@ Una vez obtenidos los usuarios, vamos a realizar un ataque de fuerza bruta con w
 
 Un ataque de fuerza bruta es un tipo de ataque que utiliza pruebas y errores para descifrar contraseñas, credenciales de inicio de sesión y claves de cifrado. Es una táctica simple pero confiable para obtener acceso no autorizado a cuentas individuales y sistemas y redes de organizaciones.
 
-Estos ataques requieren mucho tiempo, especialmente cuando se utilizan contraseñas largas o complejas. Además este proceso puede consumir grandes cantidades de recursos del sistema (como la CPU y la memoria), lo que hace que el ataque sea lento y costoso en términos de rendimiento. Además son más faciles de detectar ya que generan grandes cantidades de tráfico de red o múltiples intentos de inicio de sesión fallidos.
+Estos ataques requieren mucho tiempo, especialmente cuando se utilizan contraseñas largas o complejas. Además, este proceso puede consumir grandes cantidades de recursos del sistema (como la CPU y la memoria), lo que hace que el ataque sea lento y costoso en términos de rendimiento. Además, son más fáciles de detectar ya que generan grandes cantidades de tráfico de red o múltiples intentos de inicio de sesión fallidos.
 
 Existen varios tipos, pero nosotros vamos a usar el ataque por diccionario, en este el atacante selecciona un objetivo y luego prueba las posibles contraseñas contra el nombre de usuario de esa persona.
 
 <<<
 
-Kali Linux viene con varios diccionarios preinstalados en la ruta /usr/share/wordlists, que forman parte de sus herramientas, podemos verlo más en detalle en el siguiente enlace https://www.kali.org/tools/wordlists/[Wordlists]. Recomiendo primeramente probar diccionarios pequeños, sobretodo si encontramos indicios de credenciales por defecto, ya que tardará menos que si utilizamos diccionarios más grandes como https://github.com/intelligencegroup-io/RockYou2024[rockyou 2024] con 9,948,575,739 contraseñas.
+Kali Linux viene con varios diccionarios preinstalados en la ruta /usr/share/wordlists, que forman parte de sus herramientas, podemos verlo más en detalle en el siguiente enlace https://www.kali.org/tools/wordlists/[Wordlists]. Recomiendo primeramente probar diccionarios pequeños, sobre todo si encontramos indicios de credenciales por defecto, ya que tardará menos que si utilizamos diccionarios más grandes como https://github.com/intelligencegroup-io/RockYou2024[rockyou 2024] con 9,948,575,739 contraseñas.
 
 [source,bash]
 ----
@@ -457,7 +457,7 @@ Como ya hemos visto los intentos de pirateo de WordPress más comunes utilizan c
 
 ==== 3. Limitar los intentos de inicio de sesión
 
-Se puede restringir la cantidad de intentos fallidos de acceso para prevenir ataques de fuerza bruta. Plugins como https://wordpress.org/plugins/limit-login-attempts-reloaded/[Limit Login Attempts Reloaded] pueden ser muy utilies para esta tarea.
+Se puede restringir la cantidad de intentos fallidos de acceso para prevenir ataques de fuerza bruta. Plugins como https://wordpress.org/plugins/limit-login-attempts-reloaded/[Limit Login Attempts Reloaded] pueden ser muy útiles para esta tarea.
 
 ==== 4. Desactivar XML-RPC si no es necesario
 
@@ -481,7 +481,7 @@ Cómo ya hemos visto en otras ocasiones un WAF es muy útil, pero no debemos con
 
 ==== 6. Realizar copias de seguridad periódicas
 
-Otra de las cosas que hemos visto durante el escaneo es la falta de backups, por lo que es recomendable realizar periodicamente estas copias de seguridad, ya que en caso de ransomware puede no afectarnos tanto, aunque depende de la metodología que se siga. Hay plugins como UpdraftPlus o BlogVault y almacenan las copias en ubicaciones externas como Dropbox o Amazon S3.
+Otra de las cosas que hemos visto durante el escaneo es la falta de backups, por lo que es recomendable realizar periódicamente estas copias de seguridad, ya que en caso de ransomware puede no afectarnos tanto, aunque depende de la metodología que se siga. Hay plugins como UpdraftPlus o BlogVault y almacenan las copias en ubicaciones externas como Dropbox o Amazon S3.
 
 ==== 7. Cambiar el prefijo de la base de datos
 
